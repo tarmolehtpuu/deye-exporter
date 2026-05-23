@@ -26,7 +26,6 @@ build: $(OUTPUT_FILE)
 
 $(OUTPUT_FILE): $(SRC_FILES)
 	@mkdir -p $(OUTPUT_DIR)
-	@echo "Source filed changed. Rebuilding..."
 	@echo "$$HEADER_TEMPLATE" > $(OUTPUT_FILE)
 	@$(foreach file,$(SRC_FILES),grep -vE "import|getLogger" $(file) >> $(OUTPUT_FILE); )
 	@uvx ruff format $(OUTPUT_FILE)
