@@ -151,7 +151,7 @@ class Registry(DeyeEventProcessor):
         logger.info("Prometheus listener started")
 
     def get_id(self):
-        return "prometheus_listener"
+        return "prometheus"
 
     def process(self, events: DeyeEventList):
         logger.debug("Processing logger index: %s", events.logger_index)
