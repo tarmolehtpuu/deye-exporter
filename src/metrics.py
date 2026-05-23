@@ -53,7 +53,6 @@ METRICS: Dict[str, Metric] = {
         .desc("AC relay status code")
         .build()
     ),
-
     # --- 2. SETTINGS ---
     "settings/active_power_regulation": (
         Metric.builder()
@@ -118,7 +117,6 @@ METRICS: Dict[str, Metric] = {
         .desc("Grid charge toggle")
         .build()
     ),
-
     # --- 3. DC ---
     "dc/pv/power": (
         Metric.builder()
@@ -148,7 +146,6 @@ METRICS: Dict[str, Metric] = {
         .desc("Total DC power")
         .build()
     ),
-
     # --- 4. BATTERY ---
     "battery/soc": (
         Metric.builder()
@@ -186,30 +183,17 @@ METRICS: Dict[str, Metric] = {
         .build()
     ),
     "battery/daily_charge": (
-        Metric.builder()
-        .name("deye_battery_daily_charge")
-        .gauge()
-        .build()
+        Metric.builder().name("deye_battery_daily_charge").gauge().build()
     ),
     "battery/daily_discharge": (
-        Metric.builder()
-        .name("deye_battery_daily_discharge")
-        .gauge()
-        .build()
+        Metric.builder().name("deye_battery_daily_discharge").gauge().build()
     ),
     "battery/total_charge": (
-        Metric.builder()
-        .name("deye_battery_total_charge")
-        .counter()
-        .build()
+        Metric.builder().name("deye_battery_total_charge").counter().build()
     ),
     "battery/total_discharge": (
-        Metric.builder()
-        .name("deye_battery_total_discharge")
-        .counter()
-        .build()
+        Metric.builder().name("deye_battery_total_discharge").counter().build()
     ),
-
     # --- 5. BMS ---
     "bms/soc": (
         Metric.builder()
@@ -281,7 +265,6 @@ METRICS: Dict[str, Metric] = {
         .desc("BMS max allowable discharge current")
         .build()
     ),
-
     # --- 6. AC ---
     "ac/line/voltage": (
         Metric.builder()
@@ -360,7 +343,6 @@ METRICS: Dict[str, Metric] = {
         .desc("Total lifetime energy exported to grid")
         .build()
     ),
-
     # --- 7. UPS ---
     "ac/ups/total_power": (
         Metric.builder()
@@ -397,7 +379,6 @@ METRICS: Dict[str, Metric] = {
         .desc("Total lifetime energy consumed by UPS/Load")
         .build()
     ),
-
     # --- 8. GENERATOR ---
     "ac/generator/total_power": (
         Metric.builder()

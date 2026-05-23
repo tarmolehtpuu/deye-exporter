@@ -125,7 +125,9 @@ class Exporter:
                     labels.append(f'{label.name}="{label.value}"')
 
                 if labels:
-                    lines.append(f'{metric.name}{{{", ".join(labels)}}} {sample.formatted_value()}')
+                    lines.append(
+                        f"{metric.name}{{{', '.join(labels)}}} {sample.formatted_value()}"
+                    )
                 else:
                     lines.append(f"{metric.name} {sample.formatted_value()}")
 
@@ -180,9 +182,16 @@ class Registry(DeyeEventProcessor):
 
                 value = self._normalize_value(val)
                 if not value:
-                    logger.warning("Skipping: %s {labels=%s, value=None", metric.name, set(labels))
+                    logger.warning(
+                        "Skipping: %s {labels=%s, value=None", metric.name, set(labels)
+                    )
                 else:
-                    logger.debug("Updated: %s {labels=%s, value=%s}", metric.name, set(labels), str(value))
+                    logger.debug(
+                        "Updated: %s {labels=%s, value=%s}",
+                        metric.name,
+                        set(labels),
+                        str(value),
+                    )
                     self._data[metric][labels] = value
 
         logger.debug("Processing complete for logger index: %s", events.logger_index)
@@ -199,7 +208,9 @@ class Registry(DeyeEventProcessor):
                 metrics.append(MetricWithSamples(metric, samples))
 
         if not metrics:
-            logger.warning("No metrics to export. Inverter data may not have arrived yet.")
+            logger.warning(
+                "No metrics to export. Inverter data may not have arrived yet."
+            )
             return None
 
         return Exporter(metrics).export()
