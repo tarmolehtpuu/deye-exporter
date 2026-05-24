@@ -63,7 +63,7 @@ jobs:
             echo "Release prepared"
             ls -la .
             
-            echo "Releasing..
+            echo "Releasing..."
             gh release create v$VERSION \
               --repo tarmolehtpuu/deye-exporter \
               --title deye-exporter-$VERSION \
