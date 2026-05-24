@@ -44,22 +44,21 @@ jobs:
 
       - name: Release
         run: |
-          GH_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          if gh release view v${VERSION} > /dev/null 2>&1; then
-            echo "Release v${VERSION} already exists. Skipping"
+          if gh release view v$VERSION > /dev/null 2>&1; then
+            echo "Release v$VERSION already exists. Skipping"
           else
-            echo "Preparing release: v${VERSION}"
+            echo "Preparing release: v$VERSION"
           
-            mkdir deye-exporter-${VERSION}
-            cp LICENSE deye-exporter-${VERSION}
-            cp NOTICE deye-exporter-${VERSION}
-            cp README.md deye-exporter-${VERSION}
+            mkdir deye-exporter-$VERSION
+            cp LICENSE deye-exporter-$VERSION
+            cp NOTICE deye-exporter-$VERSION
+            cp README.md deye-exporter-$VERSION
           
-            mkdir deye-exporter-${VERSION}/plugins
-            cp plugins/*.py deye-exporter-${VERSION}/plugins
+            mkdir deye-exporter-$VERSION/plugins
+            cp plugins/*.py deye-exporter-$VERSION/plugins
             
-            ls -la build/deye-exporter-${VERSION}
-            tar -czvf deye-exporter-${VERSION}.tar.gz deye-exporter-${VERSION}
+            ls -la build/deye-exporter-$VERSION
+            tar -czvf deye-exporter-$VERSION.tar.gz deye-exporter-$VERSION
           
             echo "Release prepared"
             ls -la .
