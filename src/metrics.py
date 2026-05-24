@@ -1,6 +1,92 @@
-from typing import Dict
+from __future__ import annotations
 
-from prometheus import Metric
+from dataclasses import dataclass, field
+from enum import Enum
+from typing import List, Union, Any, Dict
+
+
+@dataclass(frozen=True)
+class Label:
+    name: str
+    value: Any
+
+
+@dataclass(frozen=True)
+class Sample:
+    labels: List[Label] = field(default_factory=list)
+    vars: List[Label] = field(default_factory=list)
+    value: Union[float, int, bool] = 0.0
+
+    def __post_init__(self):
+        if isinstance(self.value, bool):
+            object.__setattr__(self, "value", 1.0 if self.value else 0.0)
+        elif isinstance(self.value, (int, float)):
+            object.__setattr__(self, "value", float(self.value))
+
+    def formatted_value(self) -> str:
+        if not isinstance(self.value, float) and not isinstance(self.value, int):
+            return str(self.value)
+
+        return f"{self.value:.2f}".rstrip("0").rstrip(".")
+
+
+class Type(Enum):
+    COUNTER = "counter"
+    GAUGE = "gauge"
+
+    def __str__(self):
+        return self.value
+
+
+@dataclass(frozen=True)
+class Metric:
+    name: str
+    type: Type
+    desc: str
+
+    @classmethod
+    def builder(cls) -> MetricBuilder:
+        return MetricBuilder()
+
+
+class MetricBuilder:
+    def __init__(self):
+        self._name = ""
+        self._type = Type.GAUGE
+        self._desc = ""
+
+    def name(self, name: str) -> MetricBuilder:
+        self._name = name
+        return self
+
+    def counter(self) -> MetricBuilder:
+        self._type = Type.COUNTER
+        return self
+
+    def gauge(self) -> MetricBuilder:
+        self._type = Type.GAUGE
+        return self
+
+    def desc(self, desc: str) -> MetricBuilder:
+        self._desc = desc
+        return self
+
+    def build(self) -> Metric:
+        return Metric(self._name, self._type, self._desc)
+
+
+@dataclass(frozen=True)
+class MetricWithSamples:
+    metric: Metric
+    samples: List[Sample]
+
+    def __init__(self, metric: Metric, samples: Union[Sample, List[Sample]]):
+        object.__setattr__(self, "metric", metric)
+        if isinstance(samples, Sample):
+            object.__setattr__(self, "samples", [samples])
+        else:
+            object.__setattr__(self, "samples", list(samples))
+
 
 METRICS: Dict[str, Metric] = {
     # --- 1. SYSTEM ---
@@ -183,16 +269,32 @@ METRICS: Dict[str, Metric] = {
         .build()
     ),
     "battery/daily_charge": (
-        Metric.builder().name("deye_battery_daily_charge").gauge().build()
+        Metric.builder()
+        .name("deye_battery_daily_charge")
+        .gauge()
+        .desc("Battery daily charge")
+        .build()
     ),
     "battery/daily_discharge": (
-        Metric.builder().name("deye_battery_daily_discharge").gauge().build()
+        Metric.builder()
+        .name("deye_battery_daily_discharge")
+        .gauge()
+        .desc("Battery daily discharge")
+        .build()
     ),
     "battery/total_charge": (
-        Metric.builder().name("deye_battery_total_charge").counter().build()
+        Metric.builder()
+        .name("deye_battery_total_charge")
+        .counter()
+        .desc("Battery total charge")
+        .build()
     ),
     "battery/total_discharge": (
-        Metric.builder().name("deye_battery_total_discharge").counter().build()
+        Metric.builder()
+        .name("deye_battery_total_discharge")
+        .counter()
+        .desc("Battery total discharge")
+        .build()
     ),
     # --- 5. BMS ---
     "bms/soc": (

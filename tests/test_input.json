@@ -1,0 +1,410 @@
+[
+  {
+    "name": "settings/active_power_regulation",
+    "value": 0.0
+  },
+  {
+    "name": "settings/system_time",
+    "value": 1779644213.0
+  },
+  {
+    "name": "settings/battery/maximum_charge_current",
+    "value": 50
+  },
+  {
+    "name": "settings/battery/maximum_discharge_current",
+    "value": 50
+  },
+  {
+    "name": "settings/battery/maximum_grid_charge_current",
+    "value": 0
+  },
+  {
+    "name": "settings/battery/grid_charge",
+    "value": 0
+  },
+  {
+    "name": "settings/workmode",
+    "value": 1
+  },
+  {
+    "name": "settings/solar_sell_max_power",
+    "value": 50000
+  },
+  {
+    "name": "settings/solar_sell",
+    "value": 0
+  },
+  {
+    "name": "inverter/status",
+    "value": "normal"
+  },
+  {
+    "name": "ac/relay_status",
+    "value": 3
+  },
+  {
+    "name": "dc/pv1/power",
+    "value": 430
+  },
+  {
+    "name": "dc/pv2/power",
+    "value": 570
+  },
+  {
+    "name": "dc/pv3/power",
+    "value": 160
+  },
+  {
+    "name": "dc/pv4/power",
+    "value": 0
+  },
+  {
+    "name": "dc/pv1/voltage",
+    "value": 670.8000000000001
+  },
+  {
+    "name": "dc/pv1/current",
+    "value": 0.6000000000000001
+  },
+  {
+    "name": "dc/pv2/voltage",
+    "value": 414.8
+  },
+  {
+    "name": "dc/pv2/current",
+    "value": 1.3
+  },
+  {
+    "name": "dc/pv3/voltage",
+    "value": 274.6
+  },
+  {
+    "name": "dc/pv3/current",
+    "value": 0.6000000000000001
+  },
+  {
+    "name": "dc/pv4/voltage",
+    "value": 0.0
+  },
+  {
+    "name": "dc/pv4/current",
+    "value": 0.0
+  },
+  {
+    "name": "day_energy",
+    "value": 9.9
+  },
+  {
+    "name": "total_energy",
+    "value": 3424.4
+  },
+  {
+    "name": "bms/1/charging_voltage",
+    "value": 390.6
+  },
+  {
+    "name": "bms/1/discharge_voltage",
+    "value": 0.0
+  },
+  {
+    "name": "bms/1/charge_current_limit",
+    "value": 60
+  },
+  {
+    "name": "bms/1/discharge_current_limit",
+    "value": 60
+  },
+  {
+    "name": "bms/1/soc",
+    "value": 94
+  },
+  {
+    "name": "bms/1/voltage",
+    "value": 371.40000000000003
+  },
+  {
+    "name": "bms/1/current",
+    "value": -3.7
+  },
+  {
+    "name": "bms/1/temp",
+    "value": 35.0
+  },
+  {
+    "name": "bms/1/charging_max_current",
+    "value": 0
+  },
+  {
+    "name": "bms/1/discharge_max_current",
+    "value": 0
+  },
+  {
+    "name": "bms/2/charging_voltage",
+    "value": 390.6
+  },
+  {
+    "name": "bms/2/discharge_voltage",
+    "value": 0.0
+  },
+  {
+    "name": "bms/2/charge_current_limit",
+    "value": 60
+  },
+  {
+    "name": "bms/2/discharge_current_limit",
+    "value": 60
+  },
+  {
+    "name": "bms/2/soc",
+    "value": 94
+  },
+  {
+    "name": "bms/2/voltage",
+    "value": 371.5
+  },
+  {
+    "name": "bms/2/current",
+    "value": -3.4000000000000004
+  },
+  {
+    "name": "bms/2/temp",
+    "value": 33.0
+  },
+  {
+    "name": "bms/2/charging_max_current",
+    "value": 0
+  },
+  {
+    "name": "bms/2/discharge_max_current",
+    "value": 0
+  },
+  {
+    "name": "battery/daily_charge",
+    "value": 5.0
+  },
+  {
+    "name": "battery/daily_discharge",
+    "value": 2.2
+  },
+  {
+    "name": "battery/total_charge",
+    "value": 1760.7
+  },
+  {
+    "name": "battery/total_discharge",
+    "value": 1648.9
+  },
+  {
+    "name": "battery/1/power",
+    "value": 1420
+  },
+  {
+    "name": "battery/1/voltage",
+    "value": 371.3
+  },
+  {
+    "name": "battery/1/soc",
+    "value": 94
+  },
+  {
+    "name": "battery/1/current",
+    "value": 3.83
+  },
+  {
+    "name": "battery/1/temperature",
+    "value": 35.0
+  },
+  {
+    "name": "battery/2/soc",
+    "value": 94
+  },
+  {
+    "name": "battery/2/voltage",
+    "value": 371.40000000000003
+  },
+  {
+    "name": "battery/2/current",
+    "value": 3.84
+  },
+  {
+    "name": "battery/2/power",
+    "value": 1420
+  },
+  {
+    "name": "battery/2/temperature",
+    "value": 133.0
+  },
+  {
+    "name": "ac/total_power",
+    "value": 0
+  },
+  {
+    "name": "ac/l1/voltage",
+    "value": 0.0
+  },
+  {
+    "name": "ac/l2/voltage",
+    "value": 0.0
+  },
+  {
+    "name": "ac/l3/voltage",
+    "value": 0.0
+  },
+  {
+    "name": "ac/l1/ct/internal",
+    "value": 0
+  },
+  {
+    "name": "ac/l2/ct/internal",
+    "value": 0
+  },
+  {
+    "name": "ac/l3/ct/internal",
+    "value": 0
+  },
+  {
+    "name": "ac/total_internal_power",
+    "value": 0
+  },
+  {
+    "name": "ac/l1/ct/external",
+    "value": 0
+  },
+  {
+    "name": "ac/l2/ct/external",
+    "value": 0
+  },
+  {
+    "name": "ac/l3/ct/external",
+    "value": 0
+  },
+  {
+    "name": "ac/daily_energy_bought",
+    "value": 0.0
+  },
+  {
+    "name": "ac/total_energy_bought",
+    "value": 0.0
+  },
+  {
+    "name": "ac/daily_energy_sold",
+    "value": 0.0
+  },
+  {
+    "name": "ac/total_energy_sold",
+    "value": 0.0
+  },
+  {
+    "name": "ac/ongrid",
+    "value": false
+  },
+  {
+    "name": "ac/ups/total_power",
+    "value": 3583
+  },
+  {
+    "name": "ac/ups/l1/power",
+    "value": 1001
+  },
+  {
+    "name": "ac/ups/l2/power",
+    "value": 2443
+  },
+  {
+    "name": "ac/ups/l3/power",
+    "value": 139
+  },
+  {
+    "name": "ac/ups/l1/voltage",
+    "value": 233.9
+  },
+  {
+    "name": "ac/ups/l2/voltage",
+    "value": 234.3
+  },
+  {
+    "name": "ac/ups/l3/voltage",
+    "value": 232.60000000000002
+  },
+  {
+    "name": "ac/ups/daily_energy",
+    "value": 6.4
+  },
+  {
+    "name": "ac/ups/total_energy",
+    "value": 3028.4
+  },
+  {
+    "name": "ac/l1/current",
+    "value": 4.5
+  },
+  {
+    "name": "ac/l2/current",
+    "value": 10.5
+  },
+  {
+    "name": "ac/l3/current",
+    "value": 0.8
+  },
+  {
+    "name": "ac/l1/power",
+    "value": 1011
+  },
+  {
+    "name": "ac/l2/power",
+    "value": 2444
+  },
+  {
+    "name": "ac/l3/power",
+    "value": 140
+  },
+  {
+    "name": "radiator_temp",
+    "value": 51.20000000000002
+  },
+  {
+    "name": "ac/temperature",
+    "value": 51.5
+  },
+  {
+    "name": "dc/total_power",
+    "value": 1160
+  },
+  {
+    "name": "ac/generator/l1/voltage",
+    "value": 0.0
+  },
+  {
+    "name": "ac/generator/l2/voltage",
+    "value": 0.0
+  },
+  {
+    "name": "ac/generator/l3/voltage",
+    "value": 0.0
+  },
+  {
+    "name": "ac/generator/l1/power",
+    "value": 0
+  },
+  {
+    "name": "ac/generator/l2/power",
+    "value": 0
+  },
+  {
+    "name": "ac/generator/l3/power",
+    "value": 0
+  },
+  {
+    "name": "ac/generator/total_power",
+    "value": 0
+  },
+  {
+    "name": "ac/generator/daily_energy",
+    "value": 0.0
+  },
+  {
+    "name": "ac/generator/total_energy",
+    "value": 0.0
+  }
+]

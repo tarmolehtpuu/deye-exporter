@@ -1,6 +1,6 @@
 OUTPUT_DIR := build/plugins
 OUTPUT_FILE := $(OUTPUT_DIR)/deye_plugin_prometheus.py
-SRC_FILES := src/prometheus.py src/metrics.py src/server.py src/plugin.py
+SRC_FILES := src/metrics.py src/prometheus.py src/server.py src/plugin.py
 
 define HEADER_TEMPLATE
 from __future__ import annotations
@@ -20,7 +20,7 @@ logger = logging.getLogger("DeyePluginPrometheus")
 endef
 export HEADER_TEMPLATE
 
-.PHONY: all build clean
+.PHONY: all build clean lint format test
 
 build: $(OUTPUT_FILE)
 
@@ -32,3 +32,16 @@ $(OUTPUT_FILE): $(SRC_FILES)
 
 clean:
 	rm -rf $(OUTPUT_DIR)
+
+lint:
+	uvx ruff check src/
+
+format:
+	uvx ruff format src/
+	uvx ruff format tests/
+
+test:
+	PYTHONPATH=src:deye-inverter-mqtt/src uv run coverage run -m unittest discover -s tests/ -v
+	uv run coverage xml
+	uv run coverage html
+

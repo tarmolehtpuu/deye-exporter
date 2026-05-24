@@ -2,22 +2,22 @@ import logging
 import threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
-from prometheus import Registry
+from prometheus import PrometheusRegistry
 
 logger = logging.getLogger("DeyePluginPrometheus")
 
 
-def _handle_healthz(_: Registry) -> tuple[int, str, str]:
+def _handle_healthz(_: PrometheusRegistry) -> tuple[int, str, str]:
     return 200, "text/plain", "Healthy!"
 
 
-def _handle_metrics(prometheus: Registry) -> tuple[int, str, str]:
+def _handle_metrics(prometheus: PrometheusRegistry) -> tuple[int, str, str]:
     metrics = prometheus.metrics()
     payload = str(metrics) if metrics else ""
     return 200, "text/plain; version=0.0.4; charset=utf-8", payload
 
 
-def _handle_readyz(prometheus: Registry) -> tuple[int, str, str]:
+def _handle_readyz(prometheus: PrometheusRegistry) -> tuple[int, str, str]:
     if prometheus.is_ready():
         return 200, "text/plain", "Ready!"
     return 503, "text/plain", "NOT READY (Waiting for inverter)"
@@ -32,10 +32,12 @@ _ROUTES = {
 
 # noinspection PyTypeChecker
 class Server:
-    def __init__(self, address: str, port: int, prometheus: Registry):
+    def __init__(self, address: str, port: int, prometheus: PrometheusRegistry):
         self.address = address
         self.port = port
         self.prometheus = prometheus
+        self._http: HTTPServer | None = None
+        self._thread: threading.Thread | None = None
 
     def start(self):
         prometheus = self.prometheus
@@ -58,7 +60,26 @@ class Server:
 
         http = HTTPServer((self.address, self.port), HTTPRequestHandler)
 
-        thread = threading.Thread(target=http.serve_forever)
+        thread = threading.Thread(target=http.serve_forever, daemon=True)
         thread.start()
 
+        self._http = http
+        self._thread = thread
+
         logger.info("HTTP Server started %s:%d", self.address, self.port)
+
+    def stop(self):
+        if not self._http:
+            logger.warning("HTTP Server is not running")
+            return
+
+        logger.info("Stopping HTTP Server")
+
+        self._http.shutdown()
+        self._http.server_close()
+
+        if self._thread:
+            self._thread.join(timeout=5)
+
+        self._http = None
+        self._thread = None

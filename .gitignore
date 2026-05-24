@@ -17,3 +17,8 @@ wheels/
 
 # ENV
 config.env
+
+# test coverage
+.coverage
+htmlcov
+coverage.xml

@@ -1,0 +1,222 @@
+# HELP deye_setting_active_power_regulation Active power regulation percentage
+# TYPE deye_setting_active_power_regulation gauge
+deye_setting_active_power_regulation{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_setting_system_time Inverter system epoch timestamp
+# TYPE deye_setting_system_time gauge
+deye_setting_system_time{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 1779644213
+# HELP deye_setting_battery_max_charge Configured max charge current
+# TYPE deye_setting_battery_max_charge gauge
+deye_setting_battery_max_charge{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 50
+# HELP deye_setting_battery_max_discharge Configured max discharge current
+# TYPE deye_setting_battery_max_discharge gauge
+deye_setting_battery_max_discharge{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 50
+# HELP deye_setting_battery_max_grid_charge Configured max grid charge current
+# TYPE deye_setting_battery_max_grid_charge gauge
+deye_setting_battery_max_grid_charge{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_setting_battery_grid_charge Grid charge toggle
+# TYPE deye_setting_battery_grid_charge gauge
+deye_setting_battery_grid_charge{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_setting_workmode Inverter workmode ID
+# TYPE deye_setting_workmode gauge
+deye_setting_workmode{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 1
+# HELP deye_setting_solar_sell_max_power Max solar sell power
+# TYPE deye_setting_solar_sell_max_power gauge
+deye_setting_solar_sell_max_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 50000
+# HELP deye_setting_solar_sell Solar sell toggle
+# TYPE deye_setting_solar_sell gauge
+deye_setting_solar_sell{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_inverter_status Inverter operational state
+# TYPE deye_inverter_status gauge
+deye_inverter_status{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 1
+# HELP deye_ac_relay_status AC relay status code
+# TYPE deye_ac_relay_status gauge
+deye_ac_relay_status{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 3
+# HELP deye_dc_pv_power PV power per MPPT
+# TYPE deye_dc_pv_power gauge
+deye_dc_pv_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", pv="1"} 430
+deye_dc_pv_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", pv="2"} 570
+deye_dc_pv_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", pv="3"} 160
+deye_dc_pv_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", pv="4"} 0
+# HELP deye_dc_pv_voltage PV voltage per MPPT
+# TYPE deye_dc_pv_voltage gauge
+deye_dc_pv_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", pv="1"} 670.8
+deye_dc_pv_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", pv="2"} 414.8
+deye_dc_pv_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", pv="3"} 274.6
+deye_dc_pv_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", pv="4"} 0
+# HELP deye_dc_pv_current PV current per MPPT
+# TYPE deye_dc_pv_current gauge
+deye_dc_pv_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", pv="1"} 0.6
+deye_dc_pv_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", pv="2"} 1.3
+deye_dc_pv_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", pv="3"} 0.6
+deye_dc_pv_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", pv="4"} 0
+# HELP deye_day_energy Daily energy generated
+# TYPE deye_day_energy gauge
+deye_day_energy{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 9.9
+# HELP deye_total_energy Total lifetime energy generated
+# TYPE deye_total_energy counter
+deye_total_energy{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 3424.4
+# HELP deye_bms_charging_voltage BMS requested charging voltage
+# TYPE deye_bms_charging_voltage gauge
+deye_bms_charging_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="1"} 390.6
+deye_bms_charging_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="2"} 390.6
+# HELP deye_bms_discharge_voltage BMS requested discharge voltage
+# TYPE deye_bms_discharge_voltage gauge
+deye_bms_discharge_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="1"} 0
+deye_bms_discharge_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="2"} 0
+# HELP deye_bms_charge_current_limit BMS charge current limit
+# TYPE deye_bms_charge_current_limit gauge
+deye_bms_charge_current_limit{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="1"} 60
+deye_bms_charge_current_limit{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="2"} 60
+# HELP deye_bms_discharge_current_limit BMS discharge current limit
+# TYPE deye_bms_discharge_current_limit gauge
+deye_bms_discharge_current_limit{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="1"} 60
+deye_bms_discharge_current_limit{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="2"} 60
+# HELP deye_bms_soc BMS reported State of Charge
+# TYPE deye_bms_soc gauge
+deye_bms_soc{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="1"} 94
+deye_bms_soc{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="2"} 94
+# HELP deye_bms_voltage BMS reported battery voltage
+# TYPE deye_bms_voltage gauge
+deye_bms_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="1"} 371.4
+deye_bms_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="2"} 371.5
+# HELP deye_bms_current BMS reported battery current
+# TYPE deye_bms_current gauge
+deye_bms_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="1"} -3.7
+deye_bms_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="2"} -3.4
+# HELP deye_bms_temperature BMS reported battery temperature
+# TYPE deye_bms_temperature gauge
+deye_bms_temperature{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="1"} 35
+deye_bms_temperature{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="2"} 33
+# HELP deye_bms_charging_max_current BMS max allowable charge current
+# TYPE deye_bms_charging_max_current gauge
+deye_bms_charging_max_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="1"} 0
+deye_bms_charging_max_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="2"} 0
+# HELP deye_bms_discharge_max_current BMS max allowable discharge current
+# TYPE deye_bms_discharge_max_current gauge
+deye_bms_discharge_max_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="1"} 0
+deye_bms_discharge_max_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", bms="2"} 0
+# HELP deye_battery_daily_charge Battery daily charge
+# TYPE deye_battery_daily_charge gauge
+deye_battery_daily_charge{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 5
+# HELP deye_battery_daily_discharge Battery daily discharge
+# TYPE deye_battery_daily_discharge gauge
+deye_battery_daily_discharge{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 2.2
+# HELP deye_battery_total_charge Battery total charge
+# TYPE deye_battery_total_charge counter
+deye_battery_total_charge{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 1760.7
+# HELP deye_battery_total_discharge Battery total discharge
+# TYPE deye_battery_total_discharge counter
+deye_battery_total_discharge{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 1648.9
+# HELP deye_battery_power Battery power
+# TYPE deye_battery_power gauge
+deye_battery_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="1"} 1420
+deye_battery_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="2"} 1420
+# HELP deye_battery_voltage Battery voltage
+# TYPE deye_battery_voltage gauge
+deye_battery_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="1"} 371.3
+deye_battery_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="2"} 371.4
+# HELP deye_battery_soc Total Battery SOC
+# TYPE deye_battery_soc gauge
+deye_battery_soc{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="1"} 94
+deye_battery_soc{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="2"} 94
+# HELP deye_battery_current Battery current
+# TYPE deye_battery_current gauge
+deye_battery_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="1"} 3.83
+deye_battery_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="2"} 3.84
+# HELP deye_battery_temperature Battery temperature
+# TYPE deye_battery_temperature gauge
+deye_battery_temperature{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="1"} 35
+deye_battery_temperature{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="2"} 133
+# HELP deye_ac_total_power Total AC power
+# TYPE deye_ac_total_power gauge
+deye_ac_total_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_ac_voltage AC voltage per phase
+# TYPE deye_ac_voltage gauge
+deye_ac_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="1"} 0
+deye_ac_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="2"} 0
+deye_ac_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="3"} 0
+# HELP deye_ac_ct_internal Internal CT power per phase
+# TYPE deye_ac_ct_internal gauge
+deye_ac_ct_internal{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="1"} 0
+deye_ac_ct_internal{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="2"} 0
+deye_ac_ct_internal{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="3"} 0
+# HELP deye_ac_total_internal_power Total power measured by internal CTs
+# TYPE deye_ac_total_internal_power gauge
+deye_ac_total_internal_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_ac_ct_external External CT power per phase
+# TYPE deye_ac_ct_external gauge
+deye_ac_ct_external{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="1"} 0
+deye_ac_ct_external{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="2"} 0
+deye_ac_ct_external{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="3"} 0
+# HELP deye_ac_daily_energy_bought Daily energy imported from grid
+# TYPE deye_ac_daily_energy_bought gauge
+deye_ac_daily_energy_bought{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_ac_total_energy_bought Total lifetime energy imported from grid
+# TYPE deye_ac_total_energy_bought counter
+deye_ac_total_energy_bought{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_ac_daily_energy_sold Daily energy exported to grid
+# TYPE deye_ac_daily_energy_sold gauge
+deye_ac_daily_energy_sold{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_ac_total_energy_sold Total lifetime energy exported to grid
+# TYPE deye_ac_total_energy_sold counter
+deye_ac_total_energy_sold{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_ac_ongrid Grid connection status
+# TYPE deye_ac_ongrid gauge
+deye_ac_ongrid{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_ac_ups_total_power Total UPS/Load output power
+# TYPE deye_ac_ups_total_power gauge
+deye_ac_ups_total_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 3583
+# HELP deye_ac_ups_power UPS/Load power per phase
+# TYPE deye_ac_ups_power gauge
+deye_ac_ups_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="1"} 1001
+deye_ac_ups_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="2"} 2443
+deye_ac_ups_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="3"} 139
+# HELP deye_ac_ups_voltage UPS/Load voltage per phase
+# TYPE deye_ac_ups_voltage gauge
+deye_ac_ups_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="1"} 233.9
+deye_ac_ups_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="2"} 234.3
+deye_ac_ups_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="3"} 232.6
+# HELP deye_ac_ups_daily_energy Daily energy consumed by UPS/Load
+# TYPE deye_ac_ups_daily_energy gauge
+deye_ac_ups_daily_energy{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 6.4
+# HELP deye_ac_ups_total_energy Total lifetime energy consumed by UPS/Load
+# TYPE deye_ac_ups_total_energy counter
+deye_ac_ups_total_energy{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 3028.4
+# HELP deye_ac_current AC current per phase
+# TYPE deye_ac_current gauge
+deye_ac_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="1"} 4.5
+deye_ac_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="2"} 10.5
+deye_ac_current{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="3"} 0.8
+# HELP deye_ac_power AC power per phase
+# TYPE deye_ac_power gauge
+deye_ac_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="1"} 1011
+deye_ac_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="2"} 2444
+deye_ac_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="3"} 140
+# HELP deye_radiator_temperature Inverter radiator temperature
+# TYPE deye_radiator_temperature gauge
+deye_radiator_temperature{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 51.2
+# HELP deye_ac_temperature AC stage temperature
+# TYPE deye_ac_temperature gauge
+deye_ac_temperature{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 51.5
+# HELP deye_dc_total_power Total DC power
+# TYPE deye_dc_total_power gauge
+deye_dc_total_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 1160
+# HELP deye_ac_generator_voltage Generator voltage per phase
+# TYPE deye_ac_generator_voltage gauge
+deye_ac_generator_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="1"} 0
+deye_ac_generator_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="2"} 0
+deye_ac_generator_voltage{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="3"} 0
+# HELP deye_ac_generator_power Generator power per phase
+# TYPE deye_ac_generator_power gauge
+deye_ac_generator_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="1"} 0
+deye_ac_generator_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="2"} 0
+deye_ac_generator_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", line="3"} 0
+# HELP deye_ac_generator_total_power Total generator input power
+# TYPE deye_ac_generator_total_power gauge
+deye_ac_generator_total_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_ac_generator_daily_energy Daily energy provided by generator
+# TYPE deye_ac_generator_daily_energy gauge
+deye_ac_generator_daily_energy{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
+# HELP deye_ac_generator_total_energy Total lifetime energy provided by generator
+# TYPE deye_ac_generator_total_energy counter
+deye_ac_generator_total_energy{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0
