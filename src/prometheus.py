@@ -87,7 +87,6 @@ class PrometheusRegistry(DeyeEventProcessor):
                 logger.warning("Unmapped topic: %s", key)
                 continue
 
-            # TODO: inject common labels maybe here?
             metric, labels = mapping
             logger.debug("Mapping: %s -> %s", key, metric.name)
 

@@ -38,10 +38,3 @@ class DeyePlugin:
 
     def stop(self):
         self.server.stop()
-
-    @classmethod
-    def labels(cls) -> List[Label]:
-        label1 = Label("logger_ip", DeyeEnv.string("DEYE_LOGGER_IP_ADDRESS"))
-        label2 = Label("logger_port", DeyeEnv.integer("DEYE_LOGGER_PORT", 8899))
-        label3 = Label("inverter", "inverter01")
-        return [label1, label2, label3]

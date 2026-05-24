@@ -1,0 +1,47 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  PYTHON_VERSION: 3.11
+
+permissions:
+  packages: write
+  contents: write
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Lint
+        run: make lint
+
+      - name: Test
+        run: make test
+
+      - name: Build
+        run: make build
+
+      - name: Detect version
+        run: |
+          echo "VERSION=$(grep -m 1 '^version=' pyproject.toml | cut -d '"' -f 2)" >> $GITHUB_ENV
+
+      - name: Release
+        run: |
+          echo Releasing ${VERSION}...
