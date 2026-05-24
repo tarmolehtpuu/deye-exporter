@@ -1,6 +1,6 @@
 [project]
 name = "deye-exporter"
-version = "0.0.1"
+version = "0.0.5"
 description = "Prometheus Exporter for Deye inverters (deye-inverter-mqtt plugin)"
 readme = "README.md"
 requires-python = ">=3.13"
