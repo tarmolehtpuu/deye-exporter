@@ -42,28 +42,29 @@ jobs:
         run: |
           echo "VERSION=$(grep '^version =' pyproject.toml | cut -d '"' -f2 | xargs)" >> $GITHUB_ENV
 
+      - name: Release (prepare)
+        run: |
+          mkdir release
+          mkdir release/deye-exporter-$VERSION
+          mkdir release/deye-exporter-$VERSION/plugins
+          
+          cp LICENSE release/deye-exporter-$VERSION
+          cp NOTICE release/deye-exporter-$VERSION
+          cp README.md release/deye-exporter-$VERSION
+          cp build/plugins/*.py release/deye-exporter-$VERSION/plugins
+          
+          cd release && tar -czvf deye-exporter-$VERSION.tar.gz deye-exporter-$VERSION
+
       - name: Release
         run: |
           if gh release view v$VERSION > /dev/null 2>&1; then
             echo "Release v$VERSION already exists. Skipping"
           else
-            echo "Preparing release: v$VERSION"
-          
-            mkdir deye-exporter-$VERSION
-            cp LICENSE deye-exporter-$VERSION
-            cp NOTICE deye-exporter-$VERSION
-            cp README.md deye-exporter-$VERSION
-          
-            mkdir deye-exporter-$VERSION/plugins
-            cp plugins/*.py deye-exporter-$VERSION/plugins
+            echo "Releasing: v$VERSION"
             
-            ls -la build/deye-exporter-$VERSION
-            tar -czvf deye-exporter-$VERSION.tar.gz deye-exporter-$VERSION
-          
-            echo "Release prepared"
+            ls -la deye-exporter-$VERSION/          
             ls -la .
-            
-            echo "Releasing..."
+          
             gh release create v$VERSION \
               --repo tarmolehtpuu/deye-exporter \
               --title deye-exporter-$VERSION \
@@ -71,6 +72,6 @@ jobs:
           
             echo "Release $VERSION - DONE"
           fi
-        working-directory: build
+        working-directory: release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
