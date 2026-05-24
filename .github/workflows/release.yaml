@@ -40,7 +40,7 @@ jobs:
 
       - name: Detect version
         run: |
-          echo "VERSION=$(grep -m 1 '^version=' pyproject.toml | cut -d '"' -f 2)" >> $GITHUB_ENV
+          echo "VERSION=$(grep '^version =' pyproject.toml | cut -d '"' -f2 | xargs)" >> $GITHUB_ENV
 
       - name: Release
         run: |
