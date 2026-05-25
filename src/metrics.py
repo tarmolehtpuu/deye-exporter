@@ -102,6 +102,7 @@ class MetricWithSamples:
         else:
             object.__setattr__(self, "samples", list(samples))
 
+
 # TODO: double check units
 # TODO: double check descriptions
 METRICS: Dict[str, Metric] = {
