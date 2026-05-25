@@ -94,10 +94,6 @@ class PrometheusRegistry(DeyeEventProcessor):
             key = event.observation.sensor.mqtt_topic_suffix
             val = event.observation.value
 
-            # TODO: does this belong here?
-            if key == "inverter/status" and isinstance(val, str):
-                val = 1.0 if val.lower() == "normal" else 0.0
-
             mapping = self._resolve(key)
             if not mapping:
                 logger.warning("Unmapped topic: %s", key)
