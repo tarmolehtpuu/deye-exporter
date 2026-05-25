@@ -80,13 +80,9 @@ jobs:
             echo "Release v$VERSION already exists. Skipping"
           else
             echo "Releasing: v$VERSION (Docker)"
-            
             docker buildx build --platform linux/amd64,linux/arm64 -t $IMAGE_ID:$IMAGE_TAG --push .
             
             echo "Releasing: v$VERSION (GitHub)"
-            ls -la deye-exporter-$VERSION/          
-            ls -la .
-            
             gh release create v$VERSION \
               --repo tarmolehtpuu/deye-exporter \
               --title deye-exporter-$VERSION \
