@@ -1,6 +1,5 @@
 FROM ghcr.io/kbialek/deye-inverter-mqtt
 
-RUN mkdir /opt/deye_inverter_mqtt
 RUN mkdir /opt/deye_inverter_mqtt/plugins
 
 COPY build/plugins/deye_plugin_prometheus.py /opt/deye_inverter_mqtt/plugins
