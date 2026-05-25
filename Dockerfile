@@ -1,0 +1,26 @@
+FROM ghcr.io/kbialek/deye-inverter-mqtt
+
+RUN mkdir /opt/deye_inverter_mqtt
+RUN mkdir /opt/deye_inverter_mqtt/plugins
+
+COPY build/plugins/deye_plugin_prometheus.py /opt/deye_inverter_mqtt/plugins
+
+ENV PLUGINS_DIR=plugins
+ENV LUGINS_ENABLED=deye_plugin_prometheus
+
+ENV PLUGIN_PROMETHEUS_INVERTER_NAME=inverter01
+ENV PLUGIN_PROMETHEUS_LISTEN_ADDR=0.0.0.0
+ENV PLUGIN_PROMETHEUS_LISTEN_PORT=9010
+
+ENV LOG_LEVEL=INFO
+ENV LOG_STREAM=STDOUT
+
+ENV MQTT_HOST=127.0.0.1
+
+ENV DEYE_FEATURE_MQTT_PUBLISHER=false
+ENV DEYE_FEATURE_TIME_OF_USE=false
+ENV DEYE_FEATURE_ACTIVE_POWER_REGULATION=false
+ENV DEYE_FEATURE_SET_TIME=false
+ENV DEYE_FEATURE_SOLAR_SELL=false
+ENV DEYE_FEATURE_WORKMODE=false
+ENV DEYE_FEATURE_BATTERY_SETTINGS=false
