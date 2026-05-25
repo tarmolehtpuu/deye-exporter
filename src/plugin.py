@@ -30,7 +30,18 @@ class DeyePlugin:
     def __init__(self, _):
         logger.info("Prometheus plugin starting")
 
-        # TODO: refuse to start in multi inverter setup
+        self.processors = []
+
+        if DeyeEnv.integer("DEYE_LOGGER_COUNT", 1) != 1:
+            logger.warning(
+                "Multi inverter mode is not supported, please run one instance for each inverter"
+            )
+            logger.warning(
+                "More idiomatic Prometheus setup and less of a hassle to configure"
+            )
+            logger.warning("Prometheus plugin disabled")
+            return
+
         self.name = DeyeEnv.string("PLUGIN_PROMETHEUS_INVERTER_NAME")
         self.addr = DeyeEnv.string("PLUGIN_PROMETHEUS_LISTEN_ADDR", "0.0.0.0")
         self.port = DeyeEnv.integer("PLUGIN_PROMETHEUS_LISTEN_PORT", 9010)
@@ -47,10 +58,12 @@ class DeyePlugin:
         self.server = Server(self.addr, self.port, self.prometheus)
         self.server.start()
 
+        self.processors.append(self.prometheus)
+
         logger.info("Prometheus plugin started")
 
     def get_event_processors(self) -> List[DeyeEventProcessor]:
-        return [self.prometheus]
+        return self.processors
 
     def stop(self):
         self.server.stop()
