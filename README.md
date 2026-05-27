@@ -3,6 +3,32 @@
 Prometheus Exporter for Deye inverters implemented as a plugin
 for [deye-inverter-mqtt](https://github.com/kbialek/deye-inverter-mqtt).
 
+## Examples
+
+Some example dashboards are included for ideas and for getting started.
+
+#### Power: Overview ([overview.json](grafana/dashboards/overview.json))
+![Overview](grafana/screenshots/overview.png)
+
+#### Power: Temperature ([temperature.json](grafana/dashboards/temperature.json))
+![Temperature](grafana/screenshots/temperature.png)
+
+#### Power: Stats ([stats.json](grafana/dashboards/stats.json))
+![Stats](grafana/screenshots/stats.png)
+
+#### Power: Solar ([solar.json](grafana/dashboards/solar.json))
+![Solar](grafana/screenshots/solar.png)
+
+#### Power: Load ([load.json](grafana/dashboards/load.json))
+![Load](grafana/screenshots/load.png)
+
+#### Power: Battery ([battery.json](grafana/dashboards/battery.json))
+![Battery](grafana/screenshots/battery.png)
+
+#### Power: BMS ([bms.json](grafana/dashboards/bms.json))
+![BMS](grafana/screenshots/bms.png)
+
+
 ## Environment
 
 deye-exporter adds the following env variables to deye-inverter-mqtt:
@@ -21,7 +47,7 @@ see [deye-inverter-mqtt/config.env.example](https://github.com/kbialek/deye-inve
 ### 1. deye-inverter-mqtt plugin
 
 If adding to an existing deye-inverter-mqtt installation, then it's possible to just download the plugin from the
-releases page and make sure it gets copied or mounted into /plugins directory.
+[releases](https://github.com/tarmolehtpuu/deye-exporter/releases) page and make sure it gets copied or mounted into /plugins directory.
 
 **Example:**
 
