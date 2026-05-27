@@ -51,17 +51,33 @@ class PrometheusExporter:
                 for label in sample.vars:
                     labels.append(f'{label.name}="{label.value}"')
 
+                value = sample.value
+
+                # FIXME: temporary workaround until fixed upstream
+                # https://github.com/kbialek/deye-inverter-mqtt/pull/306
+                if metric.name == "deye_battery_temperature":
+                    for label in sample.labels:
+                        if label.name == "battery" and label.value == "2":
+                            value = sample.value - 100.0
+
                 if labels:
                     lines.append(
-                        f"{metric.name}{{{', '.join(labels)}}} {sample.formatted_value()}"
+                        f"{metric.name}{{{', '.join(labels)}}} {self.format(value)}"
                     )
                 else:
-                    lines.append(f"{metric.name} {sample.formatted_value()}")
+                    lines.append(f"{metric.name} {self.format(value)}")
 
         if not lines:
             return str("")
 
         return "\n".join(lines)
+
+    @staticmethod
+    def format(value: Any) -> str:
+        if not isinstance(value, float) and not isinstance(value, int):
+            return str(value)
+
+        return f"{value:.2f}".rstrip("0").rstrip(".")
 
 
 class PrometheusRegistry(DeyeEventProcessor):

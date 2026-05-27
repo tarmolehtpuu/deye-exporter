@@ -61,3 +61,7 @@ test:
 	uv run coverage xml
 	uv run coverage html
 
+make run:
+	make clean
+	make build
+	docker compose up

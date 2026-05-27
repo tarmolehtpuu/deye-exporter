@@ -126,7 +126,7 @@ deye_battery_current{logger_ip="127.0.0.1", logger_port="8899", inverter="invert
 # HELP deye_battery_temperature Battery temperature
 # TYPE deye_battery_temperature gauge
 deye_battery_temperature{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="1"} 35
-deye_battery_temperature{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="2"} 133
+deye_battery_temperature{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01", battery="2"} 33
 # HELP deye_ac_total_power Total AC power
 # TYPE deye_ac_total_power gauge
 deye_ac_total_power{logger_ip="127.0.0.1", logger_port="8899", inverter="inverter01"} 0

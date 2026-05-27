@@ -38,13 +38,6 @@ class Sample:
         elif isinstance(self.value, (int, float)):
             object.__setattr__(self, "value", float(self.value))
 
-    def formatted_value(self) -> str:
-        if not isinstance(self.value, float) and not isinstance(self.value, int):
-            return str(self.value)
-
-        return f"{self.value:.2f}".rstrip("0").rstrip(".")
-
-
 class Type(Enum):
     COUNTER = "counter"
     GAUGE = "gauge"
