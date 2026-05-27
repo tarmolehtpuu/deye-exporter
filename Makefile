@@ -36,7 +36,7 @@ logger = logging.getLogger("DeyePluginPrometheus")
 endef
 export HEADER_TEMPLATE
 
-.PHONY: all build clean lint format test
+.PHONY: all build clean lint format test run version
 
 build: $(OUTPUT_FILE)
 
@@ -61,7 +61,19 @@ test:
 	uv run coverage xml
 	uv run coverage html
 
-make run:
+run:
 	make clean
 	make build
 	docker compose up
+
+version:
+	@if [ -z "$(v)" ]; then echo "Usage: make version v=X.Y.Z"; exit 1; fi
+	@echo "Updating version: $(v)..."
+
+	@echo "  - pyproject.toml"
+	@sed -i 's/^version = "[0-9]\+\.[0-9]\+\.[0-9]\+"/version = "$(v)"/' pyproject.toml
+	@echo "  - README.md"
+	@sed -i 's/[0-9]\+\.[0-9]\+\.[0-9]\+/$(v)/g' README.md
+
+	@echo ""
+	@echo "Update version to: $(v)."
